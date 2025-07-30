@@ -21,9 +21,16 @@
 		#	./sysVars.nix
 		#	(import "${home-manager}/nixos")
 		#	./home/home-manager.nix
-		#	inputs.home-manager.nixosModules.default
-			./home.nix
+			inputs.home-manager.nixosModules.default
+		#	./home.nix
 		];
+
+	home-manager = {
+		extraSpecialArgs = { inherit inputs; };
+		users = {
+			feather = import ./home.nix;
+		};
+	};
 
 	# Bootloader.
 	boot.loader.systemd-boot.enable = true;
