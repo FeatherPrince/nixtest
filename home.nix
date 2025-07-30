@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, home, programs, osConfig, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "feather";
-  home.homeDirectory = "/home/feather";
+  home.username = "${config.main-user.userName}";
+  home.homeDirectory = "/home/${config.main-user.userName}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -14,6 +14,28 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
+  
+  programs.bash = {
+  	enable = true;
+  	bashrcExtra = ''
+  #bashrcExtra commands executed in non all shells including non interactive ones
+  '';
+  	shellAliases = {
+  		ls = "eza --icons=always -X -F=always";
+  		nrs = "sudo nixos-rebuild switch";
+  	};
+  
+  	initExtra = ''
+  #initExtra commands executed in interactive shells
+  #export PS1='┌[\u@\H][\t]\n└[\w][\$]'
+  #export PS1='\[\e[91;2m\]┌[\[\e[0m\]\u@\H\[\e[91;2m\]][\[\e[0m\]\t\[\e[91;2m\]]\n└[\[\e[0m\]\w\[\e[91;2m\]][\[\e[0m\]\$\[\e[91;2m\]]\[\e[0m\]'
+  export PS1='\[\e[91m\]┌\[\e[91m\][\[\e[0m\]\u@\H\[\e[91m\]]\[\e[91m\][\[\e[0m\]\t\[\e[91m\]]\n\[\e[91m\]└\[\e[91m\][\[\e[0m\]\w\[\e[91m\]]\[\e[91m\][\[\e[0m\]\$\[\e[91m\]]\[\e[0m\]'
+  exec fish
+  '';
+  };
+  
+
+
 
   # The home.packages option allows you to install Nix packages into your
   # environment.

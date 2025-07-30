@@ -6,13 +6,13 @@
 			= lib.mkEnableOption "enable user module";
 
 		main-user.userName = lib.mkOption {
-			default = "mainuser";
+			default = "feather";
 			descriptin = ''
 				username
 			'';
-		}
+		};
 	};
-	config = {
+	config = lib.mkIf config.main-user.enable {
 		users.users.${config.main-user.userName} = {
 			isNormalUser = true;
 			description = "main user";
@@ -21,5 +21,4 @@
 			];
 		};
 	};
-
 }

@@ -22,6 +22,7 @@
 		#	(import "${home-manager}/nixos")
 		#	./home/home-manager.nix
 		#	inputs.home-manager.nixosModules.default
+			./home.nix
 		];
 
 	# Bootloader.
