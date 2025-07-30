@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs,  ... }:
 
 {
 	imports =
@@ -17,9 +17,11 @@
 			./audioServer.nix
 			./i18n.nix
 			./disableDefaults.nix
+			./mainUser.nix
 		#	./sysVars.nix
 		#	(import "${home-manager}/nixos")
 		#	./home/home-manager.nix
+		#	inputs.home-manager.nixosModules.default
 		];
 
 	# Bootloader.
@@ -62,14 +64,9 @@
 	# services.xserver.libinput.enable = true;
 
 	# Define a user account. Don't forget to set a password with ‘passwd’.
-	users.users.feather = {
-		isNormalUser = true;
-		description = "feather";
-		extraGroups = [ "networkmanager" "wheel" ];
-		packages = with pkgs; [
 
-		];
-	};
+
+
 	# Install firefox.
 
 	# Allow unfree packages
