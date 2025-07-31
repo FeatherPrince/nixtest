@@ -22,7 +22,7 @@
 		#	./home/home-manager.nix
 			inputs.home-manager.nixosModules.default
 		#	./home.nix
-			./graphicalEnvironments/gnome/gnome.nix
+#			./graphicalEnvironments/gnome/gnome.nix
 			./graphicalEnvironments/qtile/qtile.nix
 		];
 
