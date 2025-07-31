@@ -23,12 +23,11 @@
 			inputs.home-manager.nixosModules.default
 		#	./home.nix
 #			./graphicalEnvironments/gnome/gnome.nix
-			./graphicalEnvironments/qtile/qtile.nix
+#			./graphicalEnvironments/qtile/qtile.nix
 		];
 
 	programs.hyprland.enable = true;
 	programs.waybar.enable = true;
-	programs.wofi.enable = true;
 
 	home-manager = {
 		extraSpecialArgs = { inherit inputs; };

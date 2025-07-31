@@ -13,7 +13,8 @@
 	home.username = "feather";
 	home.homeDirectory = "/home/feather";
 
-	xdg.configFile."qtile/config.py".source = ./config/qtile/qtile.py;
+#	xdg.configFile."qtile/config.py".source = ./config/qtile/qtile.py;
+#	programs.wofi.enable = true;
 
 	# This value determines the Home Manager release that your configuration is
 	# compatible with. This helps avoid breakage when a new Home Manager release
@@ -57,11 +58,15 @@
 	# The home.packages option allows you to install Nix packages into your
 	# environment.
 	home.packages  = with pkgs; [
-		vlc
 		# # Adds the 'hello' command to your environment. It prints a friendly
 		# # "Hello, world!" when run.
-		hello
+		wofi
+		firefox
 
+		gimp
+		blender
+		inkscape
+		
 		# # It is sometimes useful to fine-tune packages, for example, by applying
 		# # overrides. You can do that directly here, just don't forget the
 		# # parentheses. Maybe you want to install Nerd Fonts with a limited number of
