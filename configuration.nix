@@ -11,7 +11,6 @@
 			./programs.nix
 			./systemPackages.nix
 			./userPackages.nix
-			./graphicalEnvironments/gnome/gnome.nix
 			./greeters/greeters.nix
 			./drivers.nix
 			./audioServer.nix
@@ -23,14 +22,21 @@
 		#	./home/home-manager.nix
 			inputs.home-manager.nixosModules.default
 		#	./home.nix
+			./graphicalEnvironments/gnome/gnome.nix
+			./graphicalEnvironments/qtile/qtile.nix
 		];
 
 	home-manager = {
 		extraSpecialArgs = { inherit inputs; };
+		backupFileExtension = "backup";
+		useUserPackages = true;
+		useGlobalPkgs = true;
 		users = {
 			feather = import ./home.nix;
 		};
 	};
+
+
 
 	# Bootloader.
 	boot.loader.systemd-boot.enable = true;
