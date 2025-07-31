@@ -26,6 +26,10 @@
 			./graphicalEnvironments/qtile/qtile.nix
 		];
 
+	programs.hyprland.enable = true;
+	programs.waybar.enable = true;
+	programs.wofi.enable = true;
+
 	home-manager = {
 		extraSpecialArgs = { inherit inputs; };
 		backupFileExtension = "backup";
