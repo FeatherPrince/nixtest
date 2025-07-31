@@ -16,6 +16,8 @@
 		mpv
 		bat
 		eza
+		ncdu
+		skim
 		libreoffice-qt-fresh
 		fastfetch
 		yt-dlp
