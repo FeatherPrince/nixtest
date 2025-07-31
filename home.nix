@@ -1,6 +1,13 @@
 { config, pkgs, home, programs, osConfig, ... }:
 
 {
+	imports =
+		[
+#			./fcitx.nix
+#			./themes/adwaita-dark.nix
+#			./rofi.nix
+#			./firefox.nix
+		];
 	# Home Manager needs a bit of information about you and the paths it should
 	# manage.
 	home.username = "feather";
@@ -14,7 +21,13 @@
 	# want to update the value, then make sure to first check the Home Manager
 	# release notes.
 	home.stateVersion = "25.05"; # Please read the comment before changing.
-	
+
+#	programs.git = {
+#		userName = { "feather" };
+#		userEmail = { "" };
+#		aliases = {};
+#	};
+
 	programs.bash = {
 		enable = true;
 		bashrcExtra = ''
@@ -33,17 +46,19 @@
 	#exec fish
 	'';
 	};
-	
+		programs.fish = {
+		enable = true;
+	};
 
 
 
 	# The home.packages option allows you to install Nix packages into your
 	# environment.
-	home.packages = [
-		pkgs.vlc
+	home.packages  = with pkgs; [
+		vlc
 		# # Adds the 'hello' command to your environment. It prints a friendly
 		# # "Hello, world!" when run.
-		pkgs.hello
+		hello
 
 		# # It is sometimes useful to fine-tune packages, for example, by applying
 		# # overrides. You can do that directly here, just don't forget the
@@ -96,4 +111,14 @@
 
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
+
+#	gtk = {};
+#	xdg.mimeApps.defaultApplications = {
+#		"text/plain" = [ "" ];
+#		"application/pdf" = [ "" ];
+#		"image/*" = [ "" ];
+#		"video/png" = [ "mpv.desktop" ];
+#		"video/jpg" = [ "mpv.desktop" ];
+#		"video/*" = [ "mpv.desktop" ];
+#	};
 }
