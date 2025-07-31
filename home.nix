@@ -13,6 +13,8 @@
 	home.username = "feather";
 	home.homeDirectory = "/home/feather";
 
+	xdg.configFile."qtile/config.py".source = ./config/qtile/qtile.py;
+
 	# This value determines the Home Manager release that your configuration is
 	# compatible with. This helps avoid breakage when a new Home Manager release
 	# introduces backwards incompatible changes.
@@ -121,4 +123,6 @@
 #		"video/jpg" = [ "mpv.desktop" ];
 #		"video/*" = [ "mpv.desktop" ];
 #	};
+
+ home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ"; 
 }
