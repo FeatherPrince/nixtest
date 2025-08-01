@@ -10,11 +10,9 @@
 			/etc/nixos/hardware-configuration.nix
 			./programs.nix
 			./systemPackages.nix
-			./userPackages.nix
 			./greeters/greeters.nix
 			./drivers.nix
 			./audioServer.nix
-			./i18n.nix
 			./disableDefaults.nix
 			./mainUser.nix
 		#	./sysVars.nix
@@ -29,6 +27,7 @@
 	programs.hyprland.enable = true;
 	programs.waybar.enable = true;
 	services.xserver.windowManager.hypr.enable = true;
+	services.xserver.enable = true;
 
 
 
