@@ -66,6 +66,25 @@
 		gimp
 		blender
 		inkscape
+
+		vscodium
+		git
+		ghostty
+		bitwarden-desktop
+		discord
+		obsidian
+		audacious
+		noisetorch
+		easyeffects
+		feh
+		mpv
+		bat
+		eza
+		ncdu
+		skim
+		libreoffice-qt-fresh
+		fastfetch
+		yt-dlp
 		
 		# # It is sometimes useful to fine-tune packages, for example, by applying
 		# # overrides. You can do that directly here, just don't forget the
