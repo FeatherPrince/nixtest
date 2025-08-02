@@ -53,7 +53,7 @@
 		enable = true;
 	};
 
-
+	#home.pointerCursor.hyprcursor.enable = true;
 
 	# The home.packages option allows you to install Nix packages into your
 	# environment.
@@ -63,7 +63,7 @@
 		wofi
 		firefox
 
-		gimp
+		gimp3
 		blender
 		inkscape
 
@@ -85,6 +85,31 @@
 		libreoffice-qt-fresh
 		fastfetch
 		yt-dlp
+		killall
+		libnotify
+
+		hyprcursor
+		rose-pine-hyprcursor
+		hyprlock
+		hypridle
+		hyprshot
+		#hyprdim
+		hyprkeys
+		hyprshade
+		hyprpaper
+		hyprpicker
+		hyprland-autoname-workspaces
+		hyprshell
+
+		wlogout
+
+		swaynotificationcenter
+
+		pavucontrol
+
+		#fishPlugins.tide
+		
+		#fishplugin-tide
 		
 		# # It is sometimes useful to fine-tune packages, for example, by applying
 		# # overrides. You can do that directly here, just don't forget the
