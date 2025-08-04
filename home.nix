@@ -7,6 +7,8 @@
 #			./themes/adwaita-dark.nix
 #			./rofi.nix
 #			./firefox.nix
+#			./config/waybarSettings.nix
+			./config/waybarStyle.nix
 		];
 	# Home Manager needs a bit of information about you and the paths it should
 	# manage.
@@ -30,7 +32,8 @@
 #		userEmail = { "" };
 #		aliases = {};
 #	};
-
+#	wayland.windowManager.hyprland.systemd.enable = true;
+#	programs.waybar.enable = true;
 	programs.bash = {
 		enable = true;
 		bashrcExtra = ''
@@ -86,6 +89,11 @@
 		fastfetch
 		yt-dlp
 		killall
+
+		btop
+		htop
+		nvtopPackages.v3d
+
 		libnotify
 
 		hyprcursor
@@ -106,6 +114,7 @@
 		swaynotificationcenter
 
 		pavucontrol
+		font-manager
 
 		#fishPlugins.tide
 		

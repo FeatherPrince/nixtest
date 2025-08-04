@@ -7,8 +7,8 @@
 	];
 		fonts.packages = with pkgs; [
 		nerd-fonts.hack
-		#nerdfonts
-		#nerd-fonts.symbols-only
+		nerd-fonts.symbols-only
+		nerd-fonts.noto
 		noto-fonts
 		noto-fonts-emoji
 		noto-fonts-monochrome-emoji
@@ -38,5 +38,8 @@
 #		noto-fonts-emoji-blob-bin
 #		noto-fonts-monochrome-emoji
 #		nerd-fonts.symbols-only
+#		font-awesome
+#		font-awesome_4
+#		font-awesome_5
 	];
 }

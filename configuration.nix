@@ -26,8 +26,8 @@
 
 	programs.hyprland.enable = true;
 	programs.waybar.enable = true;
-	services.xserver.windowManager.hypr.enable = true;
-	services.xserver.enable = true;
+	#services.xserver.windowManager.hypr.enable = true;
+	#services.xserver.enable = true;
 
 
 
