@@ -66,6 +66,10 @@
 
 	programs.fish = {
 			enable = true;
+			shellAliases = {
+			ls = "eza --icons=always -X -F=always";
+#			nrs = "sudo nixos-rebuild switch";
+		};
 	};
 
 	#home.pointerCursor.hyprcursor.enable = true;
