@@ -8,7 +8,7 @@
 #			./rofi.nix
 #			./firefox.nix
 #			./config/waybarSettings.nix
-			./config/waybarStyle.nix
+#			./config/waybarStyle.nix
 		];
 	# Home Manager needs a bit of information about you and the paths it should
 	# manage.
@@ -34,6 +34,17 @@
 #	};
 #	wayland.windowManager.hyprland.systemd.enable = true;
 #	programs.waybar.enable = true;
+
+	programs.ghostty = {
+		enable = true;
+		settings = {
+			background-opacity = 0.9;
+			initial-command = "exec fish";
+		};
+	};
+
+
+
 	programs.bash = {
 		enable = true;
 		bashrcExtra = ''
@@ -52,8 +63,9 @@
 	#exec fish
 	'';
 	};
-		programs.fish = {
-		enable = true;
+
+	programs.fish = {
+			enable = true;
 	};
 
 	#home.pointerCursor.hyprcursor.enable = true;
@@ -88,10 +100,8 @@
 		libreoffice-qt-fresh
 		fastfetch
 		yt-dlp
-		killall
 
 		btop
-		htop
 		nvtopPackages.v3d
 
 		libnotify
@@ -115,6 +125,10 @@
 
 		pavucontrol
 		font-manager
+
+#		walker
+#		bzmenu
+#		iwmenu
 
 		#fishPlugins.tide
 		
